@@ -1,0 +1,5 @@
+src/registerServiceWorker.js
+src/serviceWorker.ts
+src/react-app-env.d.ts
+src/**/__tests__/**
+server.js

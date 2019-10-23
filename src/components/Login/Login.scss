@@ -1,0 +1,118 @@
+@import "../../assets/scss/variable.scss";
+
+.absolute-center-container {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 2vh;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+#fundo {
+  background-color: $brand-light;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  .circle-outline {
+    position: fixed;
+    color: transparent;
+    background-color: transparent;
+    opacity: 0.25;
+    border-width: 6em;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.5);
+    width: 100em;
+    height: 100em;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    overflow: hidden;
+    animation-name: moving-circly;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    z-index: 1;
+    &:nth-child(1) {
+      top: -80%;
+      left: -20%;
+      // top: -50em;
+      // left: -20em;
+      animation-duration: 12s;
+    }
+
+    &:nth-child(2) {
+      top: 5%;
+      left: -20%;
+      // top: 10em;
+      // left: -10em;
+      animation-duration: 24s;
+    }
+
+    &:nth-child(3) {
+      top: -20%;
+      left: 30%;
+      // top: -20em;
+      // left: 40em;
+      animation-duration: 18s;
+    }
+  }
+}
+
+// ANIMATION
+@keyframes moving-circly {
+  from {
+    transform: rotate(0deg) translate(-30px) rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg) translate(-30px) rotate(-360deg);
+  }
+}
+
+.login--container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 360px;
+  z-index: 999;
+  label, .login--header, .login--bottom {
+    *{
+      color: white;
+    }
+  }
+  
+  .login--header{
+    font-size: 32px;
+    margin-bottom: 12px;
+    color:white;
+  }
+  .login--bottom{
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .btn-login{
+    margin-top: 12px;
+    margin-bottom: 8px;
+    background: white;
+    height: 42px;
+    border-radius: 30px;
+    border: none;
+    span{
+      color: $grey;
+      font-size: 15px;
+    }
+    &:hover{
+      background: white;
+      span{
+        color: $grey-darker;
+      }
+    }
+  }
+}
+
+.login--container .btn-login span{
+  color: #58a0ef;
+}
