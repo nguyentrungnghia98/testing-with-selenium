@@ -9,6 +9,7 @@ import { State } from '../reducers/index';
 import Profile from './Profile/Profile';
 import { ProtectedRoute } from './ProtectedRoute';
 import Alert from './Alert/Alert';
+import CaroContainer from './Caro/CaroContainer';
 
 const App: React.FC = (props: any) => {
   const { isSignedIn } = props;
@@ -23,6 +24,7 @@ const App: React.FC = (props: any) => {
       <Router history={history}>
         <Switch>
           <Route path="/" exact render={() => redirect()}></Route>
+          <Route path="/caro" exact component={CaroContainer}></Route>
           <ProtectedRoute
             path="/profile"
             exact
